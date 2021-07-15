@@ -262,6 +262,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel10.setText("Penjualan di Neo Optic");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add_button.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edit_btn.png"))); // NOI18N
 
@@ -300,7 +305,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         jTable1.setGridColor(new java.awt.Color(83, 91, 93));
-        jTable1.setIntercellSpacing(new java.awt.Dimension(5, 5));
+        jTable1.setIntercellSpacing(new java.awt.Dimension(10, 5));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
         jTable1.setSelectionForeground(new java.awt.Color(83, 91, 93));
@@ -405,6 +410,14 @@ public class Dashboard extends javax.swing.JFrame {
             
             this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        addTransaksi af = new addTransaksi();
+            af.setVisible(true);
+            
+            this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

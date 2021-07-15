@@ -166,9 +166,6 @@
               <Color blue="50" green="4e" red="44" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Produk"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
@@ -308,7 +305,7 @@
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -420,18 +417,18 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ee" green="ef" red="d5" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Transaksi"/>
+            <Property name="text" type="java.lang.String" value="Daftar Member"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="36" style="1"/>
+              <Font name="Segoe UI" size="30" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ee" green="ef" red="d5" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Penjualan di Neo Optic"/>
+            <Property name="text" type="java.lang.String" value="yang berlangganan di Neo Optic"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -492,21 +489,15 @@
                   <Color blue="f0" green="f1" red="e3" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="8">
-                    <Column editable="true" title="Kode Transaksi" type="java.lang.Integer"/>
+                  <Table columnCount="4" rowCount="8">
+                    <Column editable="true" title="Kode Member" type="java.lang.Integer"/>
                     <Column editable="true" title="Nama Member" type="java.lang.String"/>
-                    <Column editable="true" title="Nama Produk" type="java.lang.String"/>
-                    <Column editable="true" title="Jumlah Beli" type="java.lang.Integer"/>
-                    <Column editable="true" title="Tgl Beli" type="java.lang.String"/>
+                    <Column editable="true" title="Email Member" type="java.lang.String"/>
+                    <Column editable="true" title="No HP Member" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>

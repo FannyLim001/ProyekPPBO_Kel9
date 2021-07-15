@@ -26,9 +26,11 @@ public class addTransaksi extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         this.setBackground(new Color(0,0,0,0));
         jTextField1.setBackground(new Color(0,0,0,0));
-        jPasswordField1.setBackground(new Color(0,0,0,0));
+        jTextField2.setBackground(new Color(0,0,0,0));
+        jTextField3.setBackground(new Color(0,0,0,0));
         jLabel6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel8.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jLabel9.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
     /**
@@ -90,7 +92,7 @@ public class addTransaksi extends javax.swing.JFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(193, 222, 221));
+        jTextField1.setForeground(new java.awt.Color(68, 78, 80));
         jTextField1.setBorder(null);
         jTextField1.setOpaque(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +102,7 @@ public class addTransaksi extends javax.swing.JFrame {
         });
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(193, 222, 221));
+        jTextField2.setForeground(new java.awt.Color(68, 78, 80));
         jTextField2.setBorder(null);
         jTextField2.setOpaque(false);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -116,9 +118,9 @@ public class addTransaksi extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel9)
-                .addGap(179, 179, 179)
+                .addGap(177, 177, 177)
                 .addComponent(jLabel1)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -143,18 +145,18 @@ public class addTransaksi extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
                     .addComponent(jSeparator3))
                 .addGap(30, 30, 30))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, 0, 880, 260));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 260));
 
         jPanel2.setBackground(new java.awt.Color(68, 78, 80));
         jPanel2.setMinimumSize(new java.awt.Dimension(460, 511));
@@ -257,18 +259,15 @@ public class addTransaksi extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        if (jTextField1.getText().equalsIgnoreCase("Admin") && jPasswordField1.getText().equalsIgnoreCase("Admin")){
-            Dashboard d = new Dashboard();
-            d.setVisible(true);
-            
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Username atau password anda salah, silahkan coba lagi");
-        }
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        Dashboard d = new Dashboard();
+        d.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

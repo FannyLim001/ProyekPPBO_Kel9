@@ -2,8 +2,8 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jul 2021 pada 15.05
+-- Host: 127.0.0.1:2021
+-- Waktu pembuatan: 16 Jul 2021 pada 15.34
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`id_member`, `nama_member`, `email`, `no_hp_member`) VALUES
 (1, 'Budiman', 'budiman@gmail.com', '081234567891'),
-(2, 'Marcella', 'marcella@gmail.com', '084534566608');
+(2, 'Marcella', 'marcella@gmail.com', '084534566608'),
+(3, 'Andi', 'andi@gmail.com', '085346571256');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,8 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat_supplier`, `no_hp_supplier`) VALUES
-(1, 'ZARA', 'Jl. Tanah Abang', '0812345678');
+(1, 'ZARA', 'Jl. Tanah Abang', '0812345678'),
+(2, 'Celcius', 'Jl. Ahmad Yani', '082389791636');
 
 -- --------------------------------------------------------
 
@@ -105,7 +107,8 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_member`, `id_produk`, `jml_beli`, `tgl_beli`) VALUES
 (1, 1, 1, 2, '2021-07-01'),
-(2, 2, 2, 2, '2021-07-06');
+(2, 2, 2, 2, '2021-07-06'),
+(3, 3, 1, 1, '2021-07-13');
 
 --
 -- Indexes for dumped tables
@@ -147,7 +150,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT untuk tabel `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -159,13 +162,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

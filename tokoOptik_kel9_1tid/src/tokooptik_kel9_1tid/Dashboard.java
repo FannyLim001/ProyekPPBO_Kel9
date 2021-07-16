@@ -422,31 +422,8 @@ public class Dashboard extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
-//    public void TampilData(){
-//        DefaultTableModel model = new DefaultTableModel();
-//        try{
-//            String sql="SELECT id_transaksi, nama_member, nama_produk,jml_beli, tgl_beli"
-//                    + " from member m, produk p, transaksi t where m.id_member=t.id_member and"
-//                    + " p.id_produk=t.id_produk;";
-//            java.sql.Connection conn = (Connection)Konfig.configDB();
-//            java.sql.Statement stm = conn.createStatement();
-//            java.sql.ResultSet res = stm.executeQuery(sql);
-//            
-//            while(res.next()){
-//                model.addRow(new Object[]{
-//                res.getString(1),
-//                res.getString(2),
-//                res.getString(3),
-//                res.getString(4),
-//                res.getString(5));
-//            }
-//                jTable1.setModel(model);
-//            }
-//        }catch(SQLException e){
-//            System.out.println("Error "+e.getMessage());
-//        }
-//    }
-//    /**
+    
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -475,11 +452,11 @@ public class Dashboard extends javax.swing.JFrame {
         
 
         /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Dashboard().setVisible(true);
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Dashboard().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

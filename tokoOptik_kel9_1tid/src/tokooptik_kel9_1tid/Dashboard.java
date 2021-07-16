@@ -423,6 +423,8 @@ public class Dashboard extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    
+    
     public void TampilData(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Kode Transaksi");

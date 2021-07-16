@@ -264,6 +264,11 @@ public class Member extends javax.swing.JFrame {
         jLabel10.setText("yang berlangganan di Neo Optic");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add_button.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edit_btn.png"))); // NOI18N
 
@@ -407,7 +412,17 @@ public class Member extends javax.swing.JFrame {
             
             this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
-     
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        addMember am = new addMember();
+        am.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
+    
+    
+    
     public void TampilData(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Kode Member");

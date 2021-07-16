@@ -10,6 +10,9 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -37,6 +40,7 @@ public class Produk_Page extends javax.swing.JFrame {
         jLabel12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel8.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        TampilData();
     }
 
     /**
@@ -414,6 +418,36 @@ public class Produk_Page extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel2MouseClicked
     
+    public void TampilData(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Kode Produk");
+        model.addColumn("Nama Produk");
+        model.addColumn("Kategori Produk");
+        model.addColumn("Brand");
+        model.addColumn("Supplier");
+        model.addColumn("Harga");
+        
+        try {
+            String sql = "SELECT * FROM produk";
+            java.sql.Connection conn = (Connection) Konfig.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            
+            while(res.next()){
+                model.addRow(new Object[]{
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                    res.getString(5),
+                    res.getString(6)
+                });
+            }
+            jTable1.setModel(model);
+        } catch(SQLException e){
+            System.out.println("Error " + e.getMessage());
+        }
+    }
     
     /**
      * @param args the command line arguments
@@ -447,11 +481,11 @@ public class Produk_Page extends javax.swing.JFrame {
         
 
         /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Produk_Page().setVisible(true);
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Produk_Page().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

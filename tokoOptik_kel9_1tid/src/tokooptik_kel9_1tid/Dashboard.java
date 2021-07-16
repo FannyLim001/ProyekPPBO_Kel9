@@ -40,6 +40,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel8.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        TampilData();
     }
 
     /**
@@ -311,7 +312,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTable1.setIntercellSpacing(new java.awt.Dimension(10, 5));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
-        jTable1.setSelectionForeground(new java.awt.Color(83, 91, 93));
+        jTable1.setSelectionForeground(new java.awt.Color(227, 241, 240));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
@@ -422,6 +423,36 @@ public class Dashboard extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    public void TampilData(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Kode Transaksi");
+        model.addColumn("Nama Member");
+        model.addColumn("Nama Produk");
+        model.addColumn("Jumlah Beli");
+        model.addColumn("Tgl Beli");
+        
+        try {
+            String sql = "SELECT id_transaksi, nama_member, nama_produk,jml_beli, tgl_beli"
+                    + " from member m, produk p, transaksi t where m.id_member=t.id_member and"
+                    + " p.id_produk=t.id_produk";
+            java.sql.Connection conn = (Connection) Konfig.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            
+            while(res.next()){
+                model.addRow(new Object[]{
+                    res.getString(1),
+                    res.getString(2),
+                    res.getString(3),
+                    res.getString(4),
+                    res.getString(5)
+                });
+            }
+            jTable1.setModel(model);
+        } catch(SQLException e){
+            System.out.println("Error " + e.getMessage());
+        }
+    }
     
     /**
      * @param args the command line arguments

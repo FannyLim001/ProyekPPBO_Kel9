@@ -492,7 +492,7 @@
                   <Table columnCount="4" rowCount="8">
                     <Column editable="true" title="Kode Supplier" type="java.lang.Integer"/>
                     <Column editable="true" title="Nama Supplier" type="java.lang.String"/>
-                    <Column editable="true" title="Email Supplier" type="java.lang.String"/>
+                    <Column editable="true" title="Alamat Supplier" type="java.lang.String"/>
                     <Column editable="true" title="No HP Supplier" type="java.lang.String"/>
                   </Table>
                 </Property>

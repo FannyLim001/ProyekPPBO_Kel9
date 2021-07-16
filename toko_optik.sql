@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2021 pada 16.17
+-- Waktu pembuatan: 16 Jul 2021 pada 15.05
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -24,28 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_transaksi`
---
-
-CREATE TABLE `detail_transaksi` (
-  `id_transaksi` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
-  `jml_produk` int(11) NOT NULL,
-  `total_biaya` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `member`
 --
 
 CREATE TABLE `member` (
   `id_member` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
+  `nama_member` varchar(45) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `no_hp` char(12) NOT NULL
+  `no_hp_member` char(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `member`
+--
+
+INSERT INTO `member` (`id_member`, `nama_member`, `email`, `no_hp_member`) VALUES
+(1, 'Budiman', 'budiman@gmail.com', '081234567891'),
+(2, 'Marcella', 'marcella@gmail.com', '084534566608');
 
 -- --------------------------------------------------------
 
@@ -78,16 +73,16 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `kategori_produk`, `brand`, `i
 
 CREATE TABLE `supplier` (
   `id_supplier` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `alamat` varchar(30) NOT NULL,
-  `no_hp` char(12) NOT NULL
+  `nama_supplier` varchar(45) NOT NULL,
+  `alamat_supplier` varchar(30) NOT NULL,
+  `no_hp_supplier` char(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `supplier`
 --
 
-INSERT INTO `supplier` (`id_supplier`, `nama`, `alamat`, `no_hp`) VALUES
+INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat_supplier`, `no_hp_supplier`) VALUES
 (1, 'ZARA', 'Jl. Tanah Abang', '0812345678');
 
 -- --------------------------------------------------------
@@ -100,19 +95,21 @@ CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
   `id_member` int(11) NOT NULL,
   `id_produk` int(11) NOT NULL,
-  `tgl_transaksi` date NOT NULL
+  `jml_beli` int(11) NOT NULL,
+  `tgl_beli` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_member`, `id_produk`, `jml_beli`, `tgl_beli`) VALUES
+(1, 1, 1, 2, '2021-07-01'),
+(2, 2, 2, 2, '2021-07-06');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
-  ADD KEY `fk_id_transaksi` (`id_transaksi`),
-  ADD KEY `fk_id_produk2` (`id_produk`);
 
 --
 -- Indeks untuk tabel `member`
@@ -139,12 +136,18 @@ ALTER TABLE `supplier`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
-  ADD KEY `fk_id_member` (`id_member`),
-  ADD KEY `fk_id_produk` (`id_produk`);
+  ADD KEY `fk_id_produk` (`id_produk`),
+  ADD KEY `fk_id_member` (`id_member`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `member`
+--
+ALTER TABLE `member`
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
@@ -162,18 +165,11 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
-
---
--- Ketidakleluasaan untuk tabel `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
-  ADD CONSTRAINT `fk_id_produk2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_id_transaksi` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id_transaksi`) ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `produk`

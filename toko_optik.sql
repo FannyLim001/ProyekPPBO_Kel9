@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+
 -- Waktu pembuatan: 17 Jul 2021 pada 17.56
+
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -99,6 +101,7 @@ INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat_supplier`, `no_h
 (5, 'Uniqlo', 'Jl. Tuanku Tambusai', '082211358926'),
 (6, 'SixtyOne', 'Jl. Sudirman', '089659283114'),
 (7, 'DEUS', 'Jl. Sulthan Hassanudin', '085265626569');
+
 
 -- --------------------------------------------------------
 

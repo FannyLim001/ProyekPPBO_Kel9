@@ -2,8 +2,8 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:2021
--- Waktu pembuatan: 17 Jul 2021 pada 10.07
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 17 Jul 2021 pada 17.56
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -69,10 +69,10 @@ CREATE TABLE `produk` (
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `kategori_produk`, `brand`, `id_supplier`, `harga`) VALUES
 (1, 'F ZU YD9601 C2 51', 'Frame', 'Zulu', 1, 340000),
 (2, 'NIKE F NJ 5009AF 223 48', 'Frame', 'Nike', 1, 863000),
-(4, 'C AFN AS PLANO', 'Contact Lens', 'define', 3, 468000),
-(5, 'O H KEY CHAIN TESTER', 'Hearingaid', 'Abd', 5, 50000),
-(6, 'ILLUSTRO PREMIUM O AV ILSTRO PMI100BO', 'Solution', 'Illustro Premium', 7, 42000),
-(7, 'UNDER ARMOUR S UA 0005 003 M9 58', 'Sunglasses', 'Under Armour', 6, 895000);
+(3, 'C AFN AS PLANO', 'Contact Lens', 'define', 3, 468000),
+(4, 'O H KEY CHAIN TESTER', 'Hearingaid', 'Abd', 5, 50000),
+(5, 'ILLUSTRO PREMIUM O AV ILSTRO PMI100BO', 'Solution', 'Illustro Premium', 7, 42000),
+(6, 'UNDER ARMOUR S UA 0005 003 M9 58', 'Sunglasses', 'Under Armour', 6, 895000);
 
 -- --------------------------------------------------------
 
@@ -124,8 +124,7 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_member`, `id_produk`, `jml_beli`, `
 (3, 3, 1, 1, '2021-07-13'),
 (4, 4, 4, 1, '2021-07-02'),
 (5, 5, 5, 1, '2021-07-20'),
-(6, 6, 6, 1, '2021-07-14'),
-(7, 7, 7, 1, '2021-07-24');
+(6, 6, 6, 1, '2021-07-14');
 
 --
 -- Indexes for dumped tables
@@ -173,7 +172,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `supplier`
@@ -185,7 +184,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

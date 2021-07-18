@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tokooptik_kel9_1tid;
+import tokooptik_kel9_1tid.Member;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -17,12 +18,12 @@ import javax.swing.JOptionPane;
  *
  * @author FANNY
  */
-public class addMember extends javax.swing.JFrame {
+public class editMember extends javax.swing.JFrame {
 
     /**
      * Creates new form login_page
      */
-    public addMember() {
+    public editMember() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -171,7 +172,7 @@ public class addMember extends javax.swing.JFrame {
 
         jSeparator2.setBackground(new java.awt.Color(213, 239, 238));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edit.png"))); // NOI18N
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -265,16 +266,15 @@ public class addMember extends javax.swing.JFrame {
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
         try {
-            String sql = "INSERT INTO member VALUES (null,"+"'"+ jTextField1.getText() +"',"
-                    + "'"+ jTextField2.getText() +"',"
-                    + "'"+ jTextField3.getText() +"')";
+            String sql = "UPDATE member SET nama_member = '"+ jTextField1.getText() +"',"
+                    + "email = '"+ jTextField2.getText() +"',"
+                    + "no_telp_member = '"+ jTextField3.getText() +"' WHERE id_member = '"+id+"'";
             
             java.sql.Connection conn = (Connection) Konfig.configDB();
             java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.execute();
-            Success_addBtn sa = new Success_addBtn();
-            sa.setVisible(true);
-            this.dispose();
+            JOptionPane.showMessageDialog(null, "Update Data Berhasil");
+            
         } catch(SQLException e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
@@ -317,14 +317,22 @@ public class addMember extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -337,7 +345,7 @@ public class addMember extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addMember().setVisible(true);
+                new editMember().setVisible(true);
             }
         });
     }

@@ -311,7 +311,7 @@ public class Supplier extends javax.swing.JFrame {
         jTable1.setIntercellSpacing(new java.awt.Dimension(5, 5));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
-        jTable1.setSelectionForeground(new java.awt.Color(83, 91, 93));
+        jTable1.setSelectionForeground(new java.awt.Color(227, 241, 240));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
@@ -364,7 +364,7 @@ public class Supplier extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

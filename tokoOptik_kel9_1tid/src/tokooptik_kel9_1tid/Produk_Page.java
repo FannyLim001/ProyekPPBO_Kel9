@@ -310,7 +310,7 @@ public class Produk_Page extends javax.swing.JFrame {
         jTable1.setIntercellSpacing(new java.awt.Dimension(5, 5));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
-        jTable1.setSelectionForeground(new java.awt.Color(83, 91, 93));
+        jTable1.setSelectionForeground(new java.awt.Color(227, 241, 240));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);

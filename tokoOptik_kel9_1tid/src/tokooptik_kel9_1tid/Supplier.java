@@ -316,7 +316,7 @@ public class Supplier extends javax.swing.JFrame {
         });
 
         jScrollPane1.setBackground(new java.awt.Color(102, 119, 122));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 200));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(452, 402));
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(102, 119, 122));
@@ -412,16 +412,16 @@ public class Supplier extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel8))
-                .addGap(14, 14, 14)
+                .addGap(7, 7, 7)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGap(60, 60, 60))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -10, 600, 530));
@@ -618,11 +618,11 @@ public class Supplier extends javax.swing.JFrame {
         
 
         /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Supplier().setVisible(true);
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Supplier().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

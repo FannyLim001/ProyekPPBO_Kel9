@@ -10,11 +10,15 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -305,6 +309,11 @@ public class Member extends javax.swing.JFrame {
         });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/print_btn.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
 
         jScrollPane1.setBackground(new java.awt.Color(102, 119, 122));
 
@@ -499,6 +508,19 @@ public class Member extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+        try {
+            InputStream is = Member.class.getResourceAsStream("/laporan/reportmember.jasper");
+            JasperPrint jsPrint = JasperFillManager.fillReport(is, null, Konfig.configDB());
+            JasperViewer.viewReport(jsPrint, false);
+            
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "cetak laporan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jLabel13MouseClicked
      
     public void TampilData(){
         DefaultTableModel model = new DefaultTableModel();

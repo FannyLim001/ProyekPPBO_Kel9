@@ -35,6 +35,7 @@ public class editMember extends javax.swing.JFrame {
         jLabel6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel8.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jLabel9.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jLabel12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
     /**

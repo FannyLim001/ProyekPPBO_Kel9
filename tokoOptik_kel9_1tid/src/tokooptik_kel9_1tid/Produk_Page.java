@@ -24,6 +24,8 @@ public class Produk_Page extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
+    String id, nama, kategori, brand, supplier, harga;
+    
     public Produk_Page() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -42,7 +44,8 @@ public class Produk_Page extends javax.swing.JFrame {
         jLabel19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         TampilData();
     }
-
+    
+    editProduk data = new editProduk();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -333,11 +336,17 @@ public class Produk_Page extends javax.swing.JFrame {
         });
         jTable1.setGridColor(new java.awt.Color(83, 91, 93));
         jTable1.setIntercellSpacing(new java.awt.Dimension(5, 5));
+        jTable1.setPreferredSize(new java.awt.Dimension(300, 200));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
         jTable1.setSelectionForeground(new java.awt.Color(227, 241, 240));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jTextField1.setBackground(new java.awt.Color(227, 241, 240));
@@ -400,8 +409,8 @@ public class Produk_Page extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -10, 600, 530));
@@ -420,7 +429,10 @@ public class Produk_Page extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
+        addProduk ap = new addProduk();
+        ap.setVisible(true);
         
+        this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
@@ -478,6 +490,25 @@ public class Produk_Page extends javax.swing.JFrame {
             TampilData();
         }
     }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int baris = jTable1.getSelectedRow();
+        id = jTable1.getValueAt(baris, 0).toString();
+        nama = jTable1.getValueAt(baris, 1).toString();
+        kategori = jTable1.getValueAt(baris, 2).toString();
+        brand = jTable1.getValueAt(baris, 3).toString();
+        harga = jTable1.getValueAt(baris, 5).toString();
+        
+        data.setVisible(true);
+        this.dispose();
+        data.pack();
+        data.id = Integer.parseInt(id);
+        data.jTextField1.setText(nama);
+        data.jTextField4.setText(kategori);
+        data.jTextField2.setText(brand);
+        data.jTextField3.setText(harga);
+    }//GEN-LAST:event_jTable1MouseClicked
     
     public void TampilData(){
         DefaultTableModel model = new DefaultTableModel();

@@ -406,7 +406,7 @@ public class Member extends javax.swing.JFrame {
                     .addComponent(jTextField1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(212, 212, 212))
+                .addGap(207, 207, 207))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -10, 600, 540));
@@ -440,6 +440,7 @@ public class Member extends javax.swing.JFrame {
         no_hp = jTable1.getValueAt(baris, 3).toString();
         
         data.setVisible(true);
+        this.dispose();
         data.pack();
         data.id = Integer.parseInt(id);
         data.jTextField1.setText(nama);

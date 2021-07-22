@@ -13,6 +13,11 @@ import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.*;
 
 /**
@@ -24,6 +29,9 @@ public class Transaksi extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
+    
+    String id, jenis, produk, jml;
+    
     public Transaksi() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -43,6 +51,8 @@ public class Transaksi extends javax.swing.JFrame {
         TampilData();
     }
 
+    editTransaksi data = new editTransaksi();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -303,6 +313,7 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/print_btn.png"))); // NOI18N
 
         jScrollPane1.setBackground(new java.awt.Color(102, 119, 122));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 200));
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(102, 119, 122));
@@ -334,11 +345,17 @@ public class Transaksi extends javax.swing.JFrame {
         });
         jTable1.setGridColor(new java.awt.Color(83, 91, 93));
         jTable1.setIntercellSpacing(new java.awt.Dimension(10, 5));
+        jTable1.setPreferredSize(new java.awt.Dimension(300, 200));
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(83, 91, 93));
         jTable1.setSelectionForeground(new java.awt.Color(227, 241, 240));
         jTable1.setShowVerticalLines(false);
         jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jTextField1.setBackground(new java.awt.Color(227, 241, 240));
@@ -401,8 +418,8 @@ public class Transaksi extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(jTextField1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -10, 600, 530));
@@ -482,6 +499,28 @@ public class Transaksi extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int baris = jTable1.getSelectedRow();
+        id = jTable1.getValueAt(baris, 0).toString();
+        jenis = jTable1.getValueAt(baris, 1).toString();
+        produk = jTable1.getValueAt(baris, 2).toString();
+        jml = jTable1.getValueAt(baris, 3).toString();
+        try {
+            Date tgl = new SimpleDateFormat("yyyy-MM-dd").parse((String)jTable1.getValueAt(baris, 4));
+            data.setVisible(true);
+        this.dispose();
+        data.pack();
+        data.id = Integer.parseInt(id);
+        data.jComboBox3.setSelectedItem(jenis);
+        data.jComboBox2.setSelectedItem(produk);
+        data.jTextField3.setText(jml);
+        data.jDateChooser1.setDate(tgl);
+        } catch (ParseException ex) {
+            Logger.getLogger(Transaksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
       
     public void TampilData(){

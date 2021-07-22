@@ -306,6 +306,7 @@ public class Supplier extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/print_btn.png"))); // NOI18N
 
         jScrollPane1.setBackground(new java.awt.Color(102, 119, 122));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(300, 200));
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(102, 119, 122));
@@ -409,8 +410,8 @@ public class Supplier extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -10, 600, 530));
@@ -500,6 +501,7 @@ public class Supplier extends javax.swing.JFrame {
         no_hp = jTable1.getValueAt(baris, 3).toString();
         
         data.setVisible(true);
+        this.dispose();
         data.pack();
         data.id = Integer.parseInt(id);
         data.jTextField1.setText(nama);

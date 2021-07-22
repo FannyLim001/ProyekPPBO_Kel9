@@ -28,7 +28,7 @@ where t.id_produk=p.id_produk]]>
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="dd5efee9-f182-4726-ab68-56ef9f4badce" x="119" y="23" width="312" height="31"/>
+				<reportElement uuid="dd5efee9-f182-4726-ab68-56ef9f4badce" x="119" y="26" width="326" height="31"/>
 				<textElement>
 					<font size="22" isBold="true"/>
 				</textElement>
@@ -37,7 +37,7 @@ where t.id_produk=p.id_produk]]>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="36" splitType="Stretch">
+		<band height="38" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="450fad8f-8336-4129-887e-a5ce391f5248" x="14" y="0" width="100" height="35"/>
 				<textElement>
@@ -48,7 +48,7 @@ where t.id_produk=p.id_produk]]>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="48" splitType="Stretch">
+		<band height="50" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="524cf099-96fd-468a-b27e-7f2636358c4f" x="2" y="19" width="100" height="20"/>
 				<textElement>

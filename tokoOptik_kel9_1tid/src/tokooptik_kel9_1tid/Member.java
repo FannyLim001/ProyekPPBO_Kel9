@@ -478,7 +478,7 @@ public class Member extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        Produk_Page p = new Produk_Page();
+        Produk p = new Produk();
         p.setVisible(true);
 
         this.dispose();

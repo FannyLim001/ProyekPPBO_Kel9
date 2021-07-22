@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a6699fc-e961-4f13-a342-4137c6f7d1d6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select id_produk, nama_produk, kategori_produk, brand, nama_supplier, harga from produk p, supplier s where s.id_supplier=p.id_supplier]]>
+	</queryString>
+	<field name="id_produk" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_produk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kategori_produk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="brand" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_supplier" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e0c9c157-616d-4482-91a4-536f8629e232" x="166" y="21" width="224" height="37"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Produk]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6642b31d-5c41-4914-9306-5725cfbf732b" x="13" y="0" width="99" height="35"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Neo Optic]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="12" y="15" width="66" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID Produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="94" y="15" width="86" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="195" y="15" width="96" height="20"/>
+				<textElement/>
+				<text><![CDATA[Kategori Produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="390" y="15" width="96" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="306" y="15" width="66" height="20"/>
+				<textElement/>
+				<text><![CDATA[Brand]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e906b3a-d221-42da-b27e-2507076b42ed" x="506" y="15" width="49" height="20"/>
+				<textElement/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="12" y="10" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_produk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="94" y="10" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_produk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="195" y="10" width="96" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kategori_produk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="390" y="10" width="96" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_supplier}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="306" y="10" width="66" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{brand}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="005a836c-c999-46bf-9955-02f1bc28bd83" x="506" y="10" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

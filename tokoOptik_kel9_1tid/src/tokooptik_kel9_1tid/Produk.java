@@ -10,23 +10,28 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
  * @author FANNY
  */
-public class Produk_Page extends javax.swing.JFrame {
+public class Produk extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
     String id, nama, kategori, brand, supplier, harga;
     
-    public Produk_Page() {
+    public Produk() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -303,6 +308,11 @@ public class Produk_Page extends javax.swing.JFrame {
         });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/print_btn.png"))); // NOI18N
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
 
         jScrollPane1.setBackground(new java.awt.Color(102, 119, 122));
 
@@ -453,7 +463,7 @@ public class Produk_Page extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        Produk_Page p = new Produk_Page();
+        Produk p = new Produk();
         p.setVisible(true);
 
         this.dispose();
@@ -509,6 +519,19 @@ public class Produk_Page extends javax.swing.JFrame {
         data.jTextField2.setText(brand);
         data.jTextField3.setText(harga);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+        try {
+            InputStream is = Produk.class.getResourceAsStream("/laporan/reportproduk.jasper");
+            JasperPrint jsPrint = JasperFillManager.fillReport(is, null, Konfig.configDB());
+            JasperViewer.viewReport(jsPrint, false);
+            
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "gagal mencetak laporan karena : "
+            + e.getMessage(), "cetak laporan", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jLabel13MouseClicked
     
     public void TampilData(){
         DefaultTableModel model = new DefaultTableModel();
@@ -588,14 +611,18 @@ public class Produk_Page extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Produk_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Produk_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Produk_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Produk_Page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Produk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -605,7 +632,7 @@ public class Produk_Page extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Produk_Page().setVisible(true);
+                new Produk().setVisible(true);
             }
         });
     }

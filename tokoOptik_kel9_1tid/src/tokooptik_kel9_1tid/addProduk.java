@@ -350,7 +350,7 @@ public class addProduk extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        Produk_Page m = new Produk_Page();
+        Produk m = new Produk();
         m.setVisible(true);
         
         this.dispose();

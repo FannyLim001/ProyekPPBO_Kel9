@@ -71,6 +71,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -358,6 +359,11 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2.add(jLabel21);
         jLabel21.setBounds(445, 252, 131, 82);
 
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(68, 78, 80));
+        jPanel2.add(jLabel26);
+        jLabel26.setBounds(80, 420, 250, 40);
+
         jLabel22.setBackground(new java.awt.Color(68, 78, 80));
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/pendapatan.png"))); // NOI18N
         jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -455,7 +461,8 @@ public void TampilData(){
             res2 = stt2.executeQuery("SELECT count(id_supplier) from supplier");
             res3 = stt3.executeQuery("SELECT count(id_produk) from produk");
             res4 = stt4.executeQuery("SELECT count(id_transaksi) from transaksi");
-//            res5 = stt5.executeQuery("SELECT sum(sum)) from transaksi");
+            res5 = stt5.executeQuery("SELECT sum(jml_beli*harga) from transaksi t, produk p"
+                    + " where t.id_produk=p.id_produk");
             res.next();
             jLabel2.setText(res.getString(1));
             res2.next();
@@ -464,6 +471,8 @@ public void TampilData(){
             jLabel24.setText(res3.getString(1));
             res4.next();
             jLabel25.setText(res4.getString(1));
+            res5.next();
+            jLabel26.setText("Rp. "+res5.getString(1));
             
         } catch(SQLException e){
             System.out.println("Error " + e.getMessage());
@@ -528,6 +537,7 @@ public void TampilData(){
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

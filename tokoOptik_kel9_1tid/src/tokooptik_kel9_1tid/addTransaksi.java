@@ -264,7 +264,7 @@ public class addTransaksi extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        Dashboard d = new Dashboard();
+        Transaksi d = new Transaksi();
         d.setVisible(true);
         
         this.dispose();

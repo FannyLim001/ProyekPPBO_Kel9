@@ -17,7 +17,7 @@ public class Konfig {
     private static Connection MySQLConfig;
     public static Connection configDB() throws SQLException{
         try {
-            String url="jdbc:mysql://localhost:3306/toko_optik"; //url database
+            String url="jdbc:mysql://localhost:3306/toko_optik?"; //url database
             String user="root"; //user database
             String pass=""; //password database
             

@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -262,7 +264,20 @@ public class addSupplier extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        
+        try {
+            String sql = "INSERT INTO supplier VALUES (null,"+"'"+ jTextField1.getText() +"',"
+                    + "'"+ jTextField2.getText() +"',"
+                    + "'"+ jTextField3.getText() +"')";
+            
+            java.sql.Connection conn = (Connection) Konfig.configDB();
+            java.sql.PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.execute();
+            Success_addSupplier sa = new Success_addSupplier();
+            sa.setVisible(true);
+            this.dispose();
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked

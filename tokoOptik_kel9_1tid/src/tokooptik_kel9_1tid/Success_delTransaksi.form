@@ -55,11 +55,11 @@
                           <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jPanel1" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jPanel1" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
@@ -87,7 +87,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ee" green="ef" red="d5" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Data berhasil ditambahkan !"/>
+            <Property name="text" type="java.lang.String" value="Data berhasil dihapus !"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">

@@ -17,6 +17,7 @@ public class TokoOptik_kel9_1tid {
     public static void main(String[] args) {
         // TODO code application logic here
         Login_page lp = new Login_page();
+        lp.setVisible(true);
     }
     
 }
